@@ -1,0 +1,85 @@
+# Unity Project: SonarCloud-LintCheck
+# Updated: 07/19/2021
+# From: Fathom 7 Digital Studios
+
+## BE SURE TO SETUP UNITY TOKEN BEFORE TRIGGER
+## BE SURE TO SETUP AND LINK SONARCLOUD INSTANCE BEFORE TRIGGER
+
+### For easy project setup, find and replace the following environment variables
+### project_id, unity_version, org_name
+
+# Github Action Trigger Setup
+name: SonarCloudAnalysisCheck
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+# Workflow Job Setup
+jobs:
+  CI: # Main Job 
+    name: Primary CI Lint Check
+    runs-on: ubuntu-latest
+    # available list of containers here:
+    # https://hub.docker.com/r/unityci/editor/tags?page=1&ordering=last_updated&name=ubuntu-2020.1.17f1-base
+    container: unityci/editor:ubuntu-2020.3.11f1-base-0.13.0
+    env:
+      DOTNET_ROOT: '/opt/unity/Editor/Data/NetCore/Sdk-2.2.107'
+
+    steps:
+
+      # Activate Unity: Grab Unity License utilizing GameCI
+      - name: Activate Unity
+        # exit code is 1 for manual activation
+        continue-on-error: true
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        run: |          
+          echo "$UNITY_LICENSE" | tr -d '\r' > UnityLicenseFile.ulf
+          unity-editor -nographics -logFile /dev/stdout -manualLicenseFile UnityLicenseFile.ulf -quit 
+      
+
+      # Checkout Repo: with fetch-depth 0 for full repo checkout
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+          lfs: true
+
+
+      # Cache Library: with path test for easy rebuilds
+      - name: Cache Library
+        id: cache-library
+        uses: actions/cache@v2
+        with:
+          path: project_id/Library
+          key: Library-unity_version
+
+
+      # Sonar Scanner: grab and install .dotnet version of SonarScanner for SonarCloud analysis to be able to trigger on valid solution (without .dotnet, cant analyze C# files)
+      - name: Install .dotnet SonarScanner
+        run: |
+          $DOTNET_ROOT/dotnet tool install dotnet-sonarscanner --tool-path . --version 5.2.0
+          apt update
+          apt install -y openjdk-11-jre-headless=11.0.11+9-0ubuntu2~18.04
+
+
+      #Generate .dotnet Solution: utilizign the UnityEditor, we need to build the project to generate a .dotnet solution to be analyzed by SonarCloud
+      - name: Generate Solution
+        run: unity-editor -nographics -logFile /dev/stdout -customBuildName project_id -projectPath project_id -buildTarget Win64 -executeMethod  UnityEditor.SyncVS.SyncSolution -quit
+
+
+      #Analyze Solution: kickoff SonarCloud analysis and report soluiton using customized project paramters
+      - name: SonarCloud Analysis
+        env:
+          FrameworkPathOverride: /opt/unity/Editor/Data/MonoBleedingEdge/
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # /k: for project key, /o: for organization name
+        run: |
+          ls -l
+          ./dotnet-sonarscanner begin /k:"project_id" /o:"org_name" /d:sonar.verbose=false /d:sonar.login=$SONAR_TOKEN /d:sonar.host.url=https://sonarcloud.io
+          $DOTNET_ROOT/dotnet build project_id/project_id.sln
+          ./dotnet-sonarscanner end /d:sonar.login=$SONAR_TOKEN
