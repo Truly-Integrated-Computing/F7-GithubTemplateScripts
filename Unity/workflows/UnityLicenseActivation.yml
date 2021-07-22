@@ -1,9 +1,9 @@
 #   Fathom 7 Digital Studios
-#   Unity Manual Activation Workflow
-#   Uses: GameCI
-#   From: https://game.ci/docs/github/activation
+#   Asana-Sync to Github
+#   Uses: Asana Git
+#   From: https://github.com/marketplace/actions/asana-git?version=v2.0.0
 
-name: Acquire Activation File
+name: Asana Task Sync
 
 on:
   workflow_dispatch: {}

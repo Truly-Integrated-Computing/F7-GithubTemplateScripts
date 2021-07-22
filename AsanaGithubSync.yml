@@ -1,0 +1,22 @@
+#   Fathom 7 Digital Studios
+#   Asana-Sync to Github
+#   Uses: Asana Git
+#   From: https://github.com/marketplace/actions/asana-git?version=v2.0.0
+
+name: Asana Task Sync
+
+push:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  Sync:
+    name: Asana Task Sync with Github on PR
+    env:
+          ASANA_TOKEN: ${{ secrets.ASANA_TOKEN }}
+      uses: https://github.com/insurify/github-actions@v2.0.0
+      with:
+        asana-pat: $ASANA_TOKEN
+        task-comment: 'View Pull Request Here: '
+        trigger-phrase: 'Asana Task:'
+        targets: '[{"Beta Kids Adventures": "In Progress", "section": "Review"}]'
