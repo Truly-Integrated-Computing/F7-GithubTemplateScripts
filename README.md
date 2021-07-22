@@ -1,13 +1,13 @@
 <!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
+*** TRULY INTEGRATED COMPUTING UNIVERSAL README TEMPLATE 
+
+*** UPDATED: 07/22/2021
+*** BY: John Murwin
+>
+
+<!--
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description, sonar_id
+*** github_username, repo_name, twitter_handle, email, project_title, project_description, sonar_project_key
 -->
 
 
@@ -21,12 +21,14 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Sonar Bugs][bugs-shield]][bugs-url]
-[![Sonar Smells][smells-shield]][smells-url] 
-[![Sonar Coverage][coverage-shield]][coverage-url]
-[![Sonar Vulnerabilities][quality-shield]][quality-url] 
-[![Sonar Quality][quality-shield]][quality-url]    
+[![Contributors][contributors-shield]][contributors-url]
+[![F7 License][license-shield]][license-url]
 
+[![Quality Gate Status][quality-gate-shield]][quality-gate-url]
+[![Vulnerabilities][vulnerabilities-shield]][vulnerabilities-url]
+[![Bugs][bugs-shield]][bugs-url]
+[![Code Smells][smells-shield]][smells-url]
+[![Coverage][coverage-shield]][coverage-url]
 
 
 <!-- PROJECT LOGO -->
@@ -39,12 +41,12 @@
   <h3 align="center">project_title!</h3>
 
   <p align="center">
-    project_description!
+    project_description by Fathom 7 Digital Studios!
     <br />
     <a href="https://github.com/Truly-Integrated-Computing/repo_name/wiki"><strong>Explore the Docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="">View Steam Page</a>
     ·
     <a href="https://github.com/Truly-Integrated-Computing/repo_name/issues">Report Bug</a>
     ·
@@ -89,12 +91,12 @@ project_description
 
 
 ### Key Features:
-- ToDo:
+
 
 
 ### Built With
 
-* [Github](https://www.github.com)  
+* [Github](https://www.github.com) 
 
 
 
@@ -104,7 +106,9 @@ project_description
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-* Source Control Tool (GitKraken preffered)
+* Source Control Tool (GitKraken preferred)
+* Script Editor (VSCode preferred) 
+* Windows / Mac OS
 
 ### Installation
 
@@ -139,14 +143,14 @@ _For examples, please refer to the F7 Style Guide: [F7 Style Guide](https://gith
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [Project Board]() for a list of milestones, features, and known issues).
+See the [Asana Board]() for a list of milestones, features, and known issues).
 
 
 
 <!-- CONTRIBUTING -->
 ## Branch Workflow
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Fathom 7 Digital Studios utilizes the [GitFlow]() methodology for branch workflows. The basic workflow is as follows:
 
 1. Clone the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -159,7 +163,8 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Private Distribution, Fathom 7 Digitial Studios: 2021. See `LICENSE.md` for more information.
+Private Distribution, Fathom 7 Digital Studios: 2021.   
+See `LICENSE.md` for more information.
 
 
 
@@ -189,29 +194,20 @@ Project Link: [https://github.com/Truly-Integrated-Computing/repo_name](https://
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Truly-Integrated-Computing/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/Truly-Integrated-Computing/repo_name/graphs/contributors 
-
-
-
-
+[issues-shield]: https://img.shields.io/github/issues/Truly-Integrated-Computing/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/Truly-Integrated-Computing/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/Truly-Integrated-Computing/repo.svg?style=for-the-badge
-[license-url]: https://github.com/Truly-Integrated-Computing/repo_name/blob/master/LICENSE.md
-
+[license-url]: https://github.com/Truly-Integrated-Computing/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/Truly-Integrated-Computing
 
-
-
-[bugs-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_id&metric=bugs
-[bugs-url]: https://sonarcloud.io/dashboard?id=sonar_id
-
-[smells-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_id&metric=code_smells
-[smells-url]: https://sonarcloud.io/dashboard?id=sonar_id
-
-[coverage-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_id&metric=coverage
-[coverage-url]: https://sonarcloud.io/dashboard?id=sonar_id
-
-[vulnerabilities-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_id&metric=vulnerabilities
-[vulnerabilities-url]: https://sonarcloud.io/dashboard?id=sonar_id
-
-[quality-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_id&metric=alert_status
-[quality-url]: https://sonarcloud.io/dashboard?id=sonar_id
+[quality-gate-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_project_key&metric=alert_status
+[quality-gate-url]: https://sonarcloud.io/dashboard?id=sonar_project_key
+[vulnerabilities-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_project_key&metric=vulnerabilities
+[vulnerabilities-url]: https://sonarcloud.io/dashboard?id=sonar_project_key
+[bugs-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_project_key&metric=bugs
+[bugs-url]: https://sonarcloud.io/dashboard?id=sonar_project_key
+[smells-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_project_key&metric=code_smells
+[smells-url]: https://sonarcloud.io/dashboard?id=sonar_project_key
+[coverage-shield]: https://sonarcloud.io/api/project_badges/measure?project=sonar_project_key&metric=coverage
+[coverage-url]: https://sonarcloud.io/dashboard?id=sonar_project_key
