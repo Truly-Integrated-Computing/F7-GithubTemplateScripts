@@ -1,4 +1,4 @@
-<!--- Provide a general summary of your changes in the Title above -->
+<!--- Provide a general summary of your changes in the Title above (use the Feature Name as a starter)-->
 
 ## Description
 <!--- Describe your changes in detail -->
@@ -15,11 +15,8 @@ Once the pull request is created, make sure to do the following:
 - [ ] Request a reviewer
 - [ ] Comment if Branch can be deleted once closed
 
-## Related Card
-<!--- This project only accepts Pull Requests related to open Items -->
-<!--- If suggesting a new feature or change, please discuss it on the Project Board / Slack first -->
-<!--- If fixing a bug, there should be an issue describing it with steps to reproduce -->
-<!--- Please link to the card here: -->
+## Related Asana Card
+<!--- Please link to the Asana card here: -->
 
 ## Context
 <!--- Why is this change required? What problem does it solve? -->
