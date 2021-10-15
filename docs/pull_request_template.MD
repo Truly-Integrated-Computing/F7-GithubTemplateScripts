@@ -1,22 +1,27 @@
-<!--- Provide a general summary of your changes in the Title above (use the Feature Name as a starter)-->
+<!--- Provide a general summary of your changes in the Title above -->
+<!--- Make sure your title starts with JIRAPROJECT-ISSUEID# --->
 
 ## Description
 <!--- Describe your changes in detail -->
+- 
+- 
+- 
 
 ## Checklist
 <!-- Make sure the F7 Checklist Items have been completed before requesting review -->
 ### Pre-PR
-- [ ] Merge #dev into a testing branch and verify no conflicts present
+- [ ] Merge #dev into your branch (or testing branch) and verify no conflicts present
 - [ ] Project Items conform to the F7 Style Guide
-- [ ] Pull Request target branch is NOT #main (these types of PRs are handled by Project Admins)
+- [ ] Pull Request target branch is NOT #main
 
 ### Post-PR
 Once the pull request is created, make sure to do the following:
 - [ ] Request a reviewer
-- [ ] Comment if Branch can be deleted once closed
+- [ ] Comment if Branch can be deleted once closed (checkbox will suffice as a YES)
 
-## Related Asana Card
-<!--- Please link to the Asana card here: -->
+## Related Card
+<!--- This project only accepts Pull Requests related to open Items, so if not Jira ID in title is present, PR will be rejected -->
+<!--- If fixing a bug, please provide link to Jira issue below, else leave blank: -->
 
 ## Context
 <!--- Why is this change required? What problem does it solve? -->
